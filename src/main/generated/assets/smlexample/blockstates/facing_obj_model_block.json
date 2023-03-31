@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "smlexample:block/facing_obj_model_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "smlexample:block/facing_obj_model_block"
+    },
+    "facing=south": {
+      "model": "smlexample:block/facing_obj_model_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "smlexample:block/facing_obj_model_block",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,8 @@
+// 1.19.4	2023-03-31T09:26:46.248693	SML Example/Model Definitions
+b9bcbea8a0528998c50710734d9e79fded0a5285 assets\smlexample\models\block\obj_model_block.json
+72d629476a66befa3a4e8fe558887f5e028e35b8 assets\smlexample\models\block\facing_obj_model_block.json
+50462e4d086dda44d4f498860f348103969e1f8f assets\smlexample\blockstates\obj_model_block.json
+e0998024bdf5461ae6fce330e303bbb2b65ba747 assets\smlexample\models\item\facing_obj_model_block.json
+acb4473daea2250801074d784d1a095ee266412b assets\smlexample\models\item\obj_model_item2.json
+85fe02e4dd4805d81a70f6701e82e1a68cbed19b assets\smlexample\blockstates\facing_obj_model_block.json
+a9e2fd7cc2427f1d6dee05ed4c9cad3cd4bb9db7 assets\smlexample\models\item\obj_model_block.json

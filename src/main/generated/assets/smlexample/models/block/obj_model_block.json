@@ -1,0 +1,6 @@
+{
+  "parent": "special-model-loader:builtin/obj",
+  "ambientocclusion": false,
+  "flip_v": true,
+  "model": "smlexample:models/block/block_obj.obj"
+}
