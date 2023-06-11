@@ -10,23 +10,20 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
 
 public class SMLExampleBlocks {
-    public static final Block OBJ_MODEL_BLOCK = new OBJBlock(FabricBlockSettings.of(Material.METAL, MaterialColor.DEEPSLATE).sound(SoundType.ANVIL));
-    public static final Block FACING_OBJ_MODEL_BLOCK = new FacingOBJBlock(FabricBlockSettings.of(Material.METAL, MaterialColor.DEEPSLATE).sound(SoundType.ANVIL));
+    public static final Block OBJ_MODEL_BLOCK = new OBJBlock(FabricBlockSettings.copyOf(Blocks.ANVIL));
+    public static final Block FACING_OBJ_MODEL_BLOCK = new FacingOBJBlock(FabricBlockSettings.copyOf(Blocks.ANVIL));
 
     public static void init() {
         register("obj_model_block", OBJ_MODEL_BLOCK);
         register("facing_obj_model_block", FACING_OBJ_MODEL_BLOCK);
 
-        ItemGroupEvents.MODIFY_ENTRIES_ALL.register((group, entries) -> {
-            if (group == CreativeModeTabs.BUILDING_BLOCKS) {
-                entries.accept(OBJ_MODEL_BLOCK);
-                entries.accept(FACING_OBJ_MODEL_BLOCK);
-            }
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(ct -> {
+            ct.accept(OBJ_MODEL_BLOCK);
+            ct.accept(FACING_OBJ_MODEL_BLOCK);
         });
     }
 

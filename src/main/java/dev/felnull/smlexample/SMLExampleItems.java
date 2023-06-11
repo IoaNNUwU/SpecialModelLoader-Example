@@ -19,17 +19,15 @@ public class SMLExampleItems {
         register("obj_model_item2", OBJ_MODEL_ITEM2);
         register("custom_model_data_obj_model_item", CUSTOM_MODEL_DATA_OBJ_MODEL_ITEM);
 
-        ItemGroupEvents.MODIFY_ENTRIES_ALL.register((group, entries) -> {
-            if (group == CreativeModeTabs.BUILDING_BLOCKS) {
-                entries.accept(OBJ_MODEL_ITEM);
-                entries.accept(OBJ_MODEL_ITEM2);
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(ct -> {
+            ct.accept(OBJ_MODEL_ITEM);
+            ct.accept(OBJ_MODEL_ITEM2);
 
-                entries.accept(CUSTOM_MODEL_DATA_OBJ_MODEL_ITEM);
+            ct.accept(CUSTOM_MODEL_DATA_OBJ_MODEL_ITEM);
 
-                ItemStack customModelDataItem = new ItemStack(CUSTOM_MODEL_DATA_OBJ_MODEL_ITEM);
-                customModelDataItem.getOrCreateTag().putInt("CustomModelData", 1);
-                entries.accept(customModelDataItem);
-            }
+            ItemStack customModelDataItem = new ItemStack(CUSTOM_MODEL_DATA_OBJ_MODEL_ITEM);
+            customModelDataItem.getOrCreateTag().putInt("CustomModelData", 1);
+            ct.accept(customModelDataItem);
         });
     }
 
