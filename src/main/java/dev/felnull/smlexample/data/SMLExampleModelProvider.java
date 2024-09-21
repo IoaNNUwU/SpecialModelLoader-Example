@@ -1,5 +1,6 @@
 package dev.felnull.smlexample.data;
 
+import com.google.common.collect.ImmutableMap;
 import dev.felnull.smlexample.SMLExample;
 import dev.felnull.smlexample.SMLExampleItems;
 import dev.felnull.smlexample.block.SMLExampleBlocks;
@@ -22,19 +23,23 @@ public class SMLExampleModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
         SpecialModelDataGenHelper.generateObjModel(SMLExampleBlocks.OBJ_MODEL_BLOCK,
-                new ResourceLocation(SMLExample.MODID, "models/block/block_obj.obj"),
+                ResourceLocation.fromNamespaceAndPath(SMLExample.MODID, "models/block/block_obj.obj"),
                 true,
                 false,
                 null,
+                ImmutableMap.of(),
+                null,
                 blockStateModelGenerator.modelOutput);
 
-        blockStateModelGenerator.blockStateOutput.accept(blockStateModelGenerator.createSimpleBlock(SMLExampleBlocks.OBJ_MODEL_BLOCK, ModelLocationUtils.getModelLocation(SMLExampleBlocks.OBJ_MODEL_BLOCK)));
+        blockStateModelGenerator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(SMLExampleBlocks.OBJ_MODEL_BLOCK, ModelLocationUtils.getModelLocation(SMLExampleBlocks.OBJ_MODEL_BLOCK)));
 
 
         SpecialModelDataGenHelper.generateObjModel(SMLExampleBlocks.FACING_OBJ_MODEL_BLOCK,
-                new ResourceLocation(SMLExample.MODID, "models/block/facing_block_obj.obj"),
+                ResourceLocation.fromNamespaceAndPath(SMLExample.MODID, "models/block/facing_block_obj.obj"),
                 true,
                 false,
+                null,
+                ImmutableMap.of(),
                 null,
                 blockStateModelGenerator.modelOutput);
 
@@ -45,9 +50,11 @@ public class SMLExampleModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
         SpecialModelDataGenHelper.generateObjModel(SMLExampleItems.OBJ_MODEL_ITEM2,
-                new ResourceLocation(SMLExample.MODID, "models/item/obj2.obj"),
+                ResourceLocation.fromNamespaceAndPath(SMLExample.MODID, "models/item/obj2.obj"),
                 true,
                 false,
+                null,
+                ImmutableMap.of(),
                 null,
                 itemModelGenerator.output);
     }

@@ -1,39 +1,39 @@
 {
-  "schemaVersion": 1,
-  "id": "smlexample",
-  "version": "${version}",
-  "name": "SML Example",
-  "description": "The ikisugi SpecialModelLoader example mod...",
-  "authors": [
-    "Me!"
-  ],
-  "contact": {
-    "homepage": "https://github.com/TeamFelnull/SpecialModelLoader/wiki",
-    "sources": "https://github.com/TeamFelnull/SpecialModelLoader"
-  },
-  "license": "CC0-1.0",
-  "icon": "assets/smlexample/icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "dev.felnull.smlexample.SMLExample"
-    ],
-    "client": [
-      "dev.felnull.smlexample.client.SMLExampleClient"
-    ],
-    "fabric-datagen": [
-      "dev.felnull.smlexample.data.SMLExampleDataGenerator"
-    ]
-  },
-  "mixins": [
-  ],
-  "depends": {
-    "fabricloader": ">=0.14.21",
-    "minecraft": "~1.20",
-    "java": ">=17",
-    "fabric-api": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
-  }
+	"schemaVersion": 1,
+	"id": "smlexample",
+	"version": "${version}",
+	"name": "SML Example",
+	"description": "The ikisugi SpecialModelLoader example mod...",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://github.com/TeamFelNull/SpecialModelLoader-Example",
+		"sources": "https://github.com/TeamFelNull/SpecialModelLoader-Example"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/modid/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.felnull.smlexample.SMLExample"
+		],
+		"client": [
+			"dev.felnull.smlexample.client.SMLExampleClient"
+		],
+		"fabric-datagen": [
+			"dev.felnull.smlexample.data.SMLExampleDataGenerator"
+		]
+	},
+	"mixins": [
+	],
+	"depends": {
+		"fabricloader": ">=0.16.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
 }

@@ -7,7 +7,9 @@ import net.fabricmc.api.ClientModInitializer;
 public class SMLExampleClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        //Without this code, special models will not be loaded!
-        SpecialModelLoaderEvents.LOAD_SCOPE.register(location -> SMLExample.MODID.equals(location.getNamespace()));
+        // Without this code, special models will not be loaded!
+        SpecialModelLoaderEvents.LOAD_SCOPE.register(() -> {
+            return (resourceManager, location) -> SMLExample.MODID.equals(location.getNamespace());
+        });
     }
 }
