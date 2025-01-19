@@ -5,14 +5,15 @@ import dev.felnull.smlexample.SMLExample;
 import dev.felnull.smlexample.SMLExampleItems;
 import dev.felnull.smlexample.block.SMLExampleBlocks;
 import dev.felnull.specialmodelloader.api.data.SpecialModelDataGenHelper;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.data.models.blockstates.Variant;
-import net.minecraft.data.models.blockstates.VariantProperties;
-import net.minecraft.data.models.model.ModelLocationUtils;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.Variant;
+import net.minecraft.client.data.models.blockstates.VariantProperties;
+import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.resources.ResourceLocation;
 
 public class SMLExampleModelProvider extends FabricModelProvider {
@@ -56,6 +57,8 @@ public class SMLExampleModelProvider extends FabricModelProvider {
                 null,
                 ImmutableMap.of(),
                 null,
-                itemModelGenerator.output);
+                itemModelGenerator.modelOutput);
+        itemModelGenerator.itemModelOutput.accept(SMLExampleItems.OBJ_MODEL_ITEM2,
+                ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(SMLExampleItems.OBJ_MODEL_ITEM2)));
     }
 }
