@@ -41,7 +41,7 @@ public class SMLExampleModelProvider extends FabricModelProvider {
                 false,
                 null,
                 ImmutableMap.of(),
-                null,
+                ResourceLocation.fromNamespaceAndPath("minecraft", "block/stone"),
                 blockStateModelGenerator.modelOutput);
 
         blockStateModelGenerator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(SMLExampleBlocks.FACING_OBJ_MODEL_BLOCK, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(SMLExampleBlocks.FACING_OBJ_MODEL_BLOCK)))
